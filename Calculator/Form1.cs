@@ -22,9 +22,12 @@ namespace Calculator
             (sender as Button).Text = "Я НАЖАТА!!!";
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void numButton_Click(object sender, EventArgs e) //обработка нажатия кнопок с цифрами
         {
-
+            if (Tablo.Text.Length < 12) //число не более 12 символов
+            {
+                Tablo.Text += (sender as Button).Text;
+            }
         }
     }
 }
