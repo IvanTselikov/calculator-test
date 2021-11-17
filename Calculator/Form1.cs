@@ -21,5 +21,10 @@ namespace Calculator
         {
             (sender as Button).Text = "Я НАЖАТА!!!";
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
