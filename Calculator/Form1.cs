@@ -24,6 +24,7 @@ namespace Calculator
 
         private void numButton_Click(object sender, EventArgs e) //обработка нажатия кнопок с цифрами
         {
+            if ((Tablo.Text.Length ==1)&&(Tablo.Text[0]=='0')) { Tablo.Text = ""; }
             if (Tablo.Text.Length < 12) //число не более 12 символов
             {
                 Tablo.Text += (sender as Button).Text;

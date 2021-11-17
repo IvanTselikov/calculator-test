@@ -241,7 +241,7 @@ namespace Calculator
             this.Tablo.Name = "Tablo";
             this.Tablo.Size = new System.Drawing.Size(252, 80);
             this.Tablo.TabIndex = 17;
-            this.Tablo.Text = "1";
+            this.Tablo.Text = "0";
             this.Tablo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Equal
