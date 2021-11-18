@@ -17,6 +17,8 @@ namespace Calculator
             InitializeComponent();
         }
 
+        int inp1, inp2; //операнды
+
         private void button1_Click(object sender, EventArgs e)
         {
             (sender as Button).Text = "Я НАЖАТА!!!";
@@ -30,5 +32,55 @@ namespace Calculator
                 Tablo.Text += (sender as Button).Text;
             }
         }
+
+        /// <summary>
+        /// Выполнить операцию.
+        /// Получает на вход строку с последним выбранным знаком операции
+        /// </summary>
+        /// <returns>Строка с результатом операции</returns>
+        string Operation(string CurrentOp)
+        {
+            string  res = "";
+
+            switch (CurrentOp)
+            {
+                case "+":
+                    res = (inp1 + inp2).ToString();
+                    break;
+                case "-":
+                    res = (inp1 - inp2).ToString();
+                    break;
+                case "×":
+                    res = (inp1 * inp2).ToString();
+                    break;
+                case "/":
+                    if (inp1 == 0 && inp2 == 0)
+                    {
+                        throw new Exception("Неопределено");
+                    }
+                    else
+                    {
+                        if (inp2 == 0)
+                        {
+                            throw new Exception("Деление невозможно");
+                        }
+                        else
+                        {
+                            res = (inp1 / inp2).ToString();
+                        }
+                    }
+                    break;
+            }
+            if (double.Parse(res) > double.MaxValue)
+            {
+                throw new Exception("Большое число!");
+            }
+            if (double.Parse(res) < double.MinValue)
+            {
+                throw new Exception("Маленькое число!");
+            }
+            return res;
+        }
+
     }
 }
