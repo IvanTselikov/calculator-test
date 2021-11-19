@@ -222,6 +222,7 @@ namespace Calculator
             this.Comma.TabIndex = 15;
             this.Comma.Text = ",";
             this.Comma.UseVisualStyleBackColor = true;
+            this.Comma.Click += new System.EventHandler(this.Comma_Click);
             // 
             // ClearLastCharacter
             // 
