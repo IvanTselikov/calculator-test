@@ -59,5 +59,20 @@ namespace Calculator
                 if ((Tablo.Text[0] == '-') && (!Tablo.Text.Contains(',')) && (Convert.ToDouble(Tablo.Text) == 0)) { Tablo.Text = "0"; }
             }
         }
+
+        private void ChangeSign_Click(object sender, EventArgs e)
+        {
+           
+                if ((ErrorFlag)) { return; }
+                if (Tablo.Text.IndexOf("-", 0) == -1)
+                {
+                    Tablo.Text = Tablo.Text.Insert(0, "-");
+                }
+                else
+                {
+                    Tablo.Text = Tablo.Text.Remove(0, 1);
+                }
+            
+        }
     }
 }

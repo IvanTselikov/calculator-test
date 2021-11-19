@@ -265,6 +265,7 @@ namespace Calculator
             this.ChangeSign.TabIndex = 19;
             this.ChangeSign.Text = "+/-";
             this.ChangeSign.UseVisualStyleBackColor = true;
+            this.ChangeSign.Click += new System.EventHandler(this.ChangeSign_Click);
             // 
             // panel1
             // 
