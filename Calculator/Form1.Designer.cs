@@ -233,6 +233,7 @@ namespace Calculator
             this.ClearLastCharacter.TabIndex = 16;
             this.ClearLastCharacter.Text = "<---";
             this.ClearLastCharacter.UseVisualStyleBackColor = true;
+            this.ClearLastCharacter.Click += new System.EventHandler(this.ClearLastCharacter_Click);
             // 
             // Tablo
             // 
