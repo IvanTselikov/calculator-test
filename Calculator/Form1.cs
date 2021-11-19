@@ -39,5 +39,25 @@ namespace Calculator
             Tablo.Text += ",";
             dec = true; 
         }
+
+        private void ClearLastCharacter_Click(object sender, EventArgs e)
+        {
+            if ((ErrorFlag)||(Tablo.Text.Contains("E"))) { return; }
+            if (Tablo.Text.Length == 1) { Tablo.Text = "0"; }
+            else
+            {
+                if (Tablo.Text[Tablo.Text.Length - 1] == ',') { dec = false; };
+                Tablo.Text = Tablo.Text.Remove(Tablo.Text.Length - 1, 1);
+            };
+
+            if ((Tablo.Text.Length == 1) && (Tablo.Text.Contains('-')))
+            {
+                Tablo.Text = "0";
+            }
+            else
+            {
+                if ((Tablo.Text[0] == '-') && (!Tablo.Text.Contains(',')) && (Convert.ToDouble(Tablo.Text) == 0)) { Tablo.Text = "0"; }
+            }
+        }
     }
 }
