@@ -12,6 +12,8 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
+        private bool ErrorFlag = false; //флаг ошибки. Если true - произошла ошибка
+        private bool dec = false; // Является ли число десятичной дробью. Если true - в числе есть запятая
         public Form1()
         {
             InitializeComponent();
@@ -29,6 +31,13 @@ namespace Calculator
             {
                 Tablo.Text += (sender as Button).Text;
             }
+        }
+
+        private void Comma_Click(object sender, EventArgs e)
+        {
+            if ((Tablo.Text.Length >= 12) || Tablo.Text.Contains('E') || ErrorFlag || Tablo.Text.Contains(',')) { return; }
+            Tablo.Text += ",";
+            dec = true; 
         }
     }
 }
