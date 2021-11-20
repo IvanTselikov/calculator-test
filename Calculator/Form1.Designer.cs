@@ -222,6 +222,7 @@ namespace Calculator
             this.Comma.TabIndex = 15;
             this.Comma.Text = ",";
             this.Comma.UseVisualStyleBackColor = true;
+            this.Comma.Click += new System.EventHandler(this.Comma_Click);
             // 
             // ClearLastCharacter
             // 
@@ -232,6 +233,7 @@ namespace Calculator
             this.ClearLastCharacter.TabIndex = 16;
             this.ClearLastCharacter.Text = "<---";
             this.ClearLastCharacter.UseVisualStyleBackColor = true;
+            this.ClearLastCharacter.Click += new System.EventHandler(this.ClearLastCharacter_Click);
             // 
             // Tablo
             // 
@@ -263,6 +265,7 @@ namespace Calculator
             this.ChangeSign.TabIndex = 19;
             this.ChangeSign.Text = "+/-";
             this.ChangeSign.UseVisualStyleBackColor = true;
+            this.ChangeSign.Click += new System.EventHandler(this.ChangeSign_Click);
             // 
             // panel1
             // 
