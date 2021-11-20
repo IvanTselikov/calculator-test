@@ -14,10 +14,6 @@ namespace Calculator
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            (sender as Button).Text = "Я НАЖАТА!!!";
-        }
 
         private bool isNewNumber = true;
 
@@ -141,6 +137,16 @@ namespace Calculator
             {
                 if ((Tablo.Text[0] == '-') && (!Tablo.Text.Contains(',')) && (Convert.ToDouble(Tablo.Text) == 0)) { Tablo.Text = "0"; }
             }
+        }
+
+        private void ClearTablo_Click(object sender, EventArgs e)
+        {
+            inp1 = 0;
+            inp2 = double.NaN;
+            lastOperation = "+";
+            Tablo.Text = "0";
+            isNewNumber = true;
+            errorFlag = false;
         }
 
         private void ChangeSign_Click(object sender, EventArgs e)
