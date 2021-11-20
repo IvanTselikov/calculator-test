@@ -182,6 +182,7 @@ namespace Calculator
             this.Plus.TabIndex = 11;
             this.Plus.Text = "+";
             this.Plus.UseVisualStyleBackColor = true;
+            this.Plus.Click += new System.EventHandler(this.operationButton_Click);
             // 
             // Minus
             // 
@@ -192,6 +193,7 @@ namespace Calculator
             this.Minus.TabIndex = 12;
             this.Minus.Text = "-";
             this.Minus.UseVisualStyleBackColor = true;
+            this.Minus.Click += new System.EventHandler(this.operationButton_Click);
             // 
             // MultipliedBy
             // 
@@ -202,6 +204,7 @@ namespace Calculator
             this.MultipliedBy.TabIndex = 13;
             this.MultipliedBy.Text = "*";
             this.MultipliedBy.UseVisualStyleBackColor = true;
+            this.MultipliedBy.Click += new System.EventHandler(this.operationButton_Click);
             // 
             // DividedBy
             // 
@@ -212,6 +215,7 @@ namespace Calculator
             this.DividedBy.TabIndex = 14;
             this.DividedBy.Text = "/";
             this.DividedBy.UseVisualStyleBackColor = true;
+            this.DividedBy.Click += new System.EventHandler(this.operationButton_Click);
             // 
             // Comma
             // 
@@ -305,6 +309,7 @@ namespace Calculator
             this.MinimumSize = new System.Drawing.Size(441, 436);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Click += new System.EventHandler(this.operationButton_Click);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
