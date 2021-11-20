@@ -19,33 +19,43 @@ namespace Calculator
 
         private void numButton_Click(object sender, EventArgs e) //обработка нажатия кнопок с цифрами
         {
-            if (Tablo.Text == "0" || isNewNumber)
+            if (!errorFlag)
             {
-                Tablo.Text = "";
-                isNewNumber = false;
-            }
-            if (Tablo.Text.Length < 18) // число не более 18 символов
-            {
-                Tablo.Text += (sender as Button).Text;
+                if (Tablo.Text == "0" || isNewNumber)
+                {
+                    Tablo.Text = "";
+                    isNewNumber = false;
+                }
+                if (Tablo.Text.Length < 18) // число не более 18 символов
+                {
+                    Tablo.Text += (sender as Button).Text;
+                }
             }
         }
 
-        private double inp1 = 0, inp2 = double.NaN; // операнды
+        private double inp1 = Double.NaN, inp2 = Double.NaN; // операнды
 
         private string lastOperation = "+";
-
+                
         private void operationButton_Click(object sender, EventArgs e)
         {
             if (!errorFlag)
             {
                 string currentOperation = (sender as Button).Text;
-
-                if (!isNewNumber)
+                if (double.IsNaN(inp1))
+                {
+                    inp1 = double.Parse(Tablo.Text);
+                    lastOperation = currentOperation;
+                    isNewNumber = true;
+                    //Tablo.Text = "0";
+                    return;
+                }    
+                else
                 {
                     inp2 = double.Parse(Tablo.Text);
-
                     try
                     {
+                        if (isNewNumber) { lastOperation = currentOperation; return; }
                         inp1 = Operation(lastOperation);
 
                         string result = inp1.ToString();
@@ -59,8 +69,7 @@ namespace Calculator
                         Tablo.Text = ex.Message;
                         errorFlag = true;
                     }
-                }
-
+                } 
                 lastOperation = currentOperation;
                 isNewNumber = true;
             }
@@ -142,8 +151,8 @@ namespace Calculator
 
         private void ClearTablo_Click(object sender, EventArgs e)
         {
-            inp1 = 0;
-            inp2 = double.NaN;
+            inp1 = Double.NaN;
+            inp2 = Double.NaN;
             lastOperation = "+";
             Tablo.Text = "0";
             isNewNumber = true;
