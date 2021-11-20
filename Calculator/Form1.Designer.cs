@@ -246,7 +246,7 @@ namespace Calculator
             this.Tablo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
             this.Tablo.Location = new System.Drawing.Point(12, 44);
             this.Tablo.Name = "Tablo";
-            this.Tablo.Size = new System.Drawing.Size(252, 80);
+            this.Tablo.Size = new System.Drawing.Size(396, 80);
             this.Tablo.TabIndex = 17;
             this.Tablo.Text = "0";
             this.Tablo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
