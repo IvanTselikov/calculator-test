@@ -24,7 +24,7 @@ namespace Calculator
                 Tablo.Text = "";
                 isNewNumber = false;
             }
-            if (Tablo.Text.Length <= 12) // число не более 12 символов
+            if (Tablo.Text.Length < 18) // число не более 18 символов
             {
                 Tablo.Text += (sender as Button).Text;
             }
@@ -49,14 +49,15 @@ namespace Calculator
                         inp1 = Operation(lastOperation);
 
                         string result = inp1.ToString();
-                        if (result.Length > 11)
-                            result = result.Substring(0, 12);
+                        if (result.Length > 17)
+                            result = result.Substring(0, 18);
 
                         Tablo.Text = result;
                     }
                     catch (Exception ex)
                     {
                         Tablo.Text = ex.Message;
+                        errorFlag = true;
                     }
                 }
 
@@ -116,7 +117,7 @@ namespace Calculator
 
         private void Comma_Click(object sender, EventArgs e)
         {
-            if ((Tablo.Text.Length >= 12) || Tablo.Text.Contains('E') || errorFlag || Tablo.Text.Contains(',')) { return; }
+            if ((Tablo.Text.Length >= 18) || Tablo.Text.Contains('E') || errorFlag || Tablo.Text.Contains(',')) { return; }
             Tablo.Text += ",";
         }
 
