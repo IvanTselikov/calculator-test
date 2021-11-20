@@ -172,6 +172,7 @@ namespace Calculator
             this.ClearTablo.TabIndex = 10;
             this.ClearTablo.Text = "C";
             this.ClearTablo.UseVisualStyleBackColor = true;
+            this.ClearTablo.Click += new System.EventHandler(this.ClearTablo_Click);
             // 
             // Plus
             // 
